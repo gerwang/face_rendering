@@ -1,9 +1,9 @@
 #include "renderer.h"
-#define STBI_MSC_SECURE_CRT
+//#define STBI_MSC_SECURE_CRT
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "includes/stb_image_write.h"
 
-
+const float GAUSSIAN_WIDTH[] = { 0.042, 0.22, 0.433, 0.753, 1.412, 2.722 };
 
 Renderer::Renderer(
 	IndView* view, 

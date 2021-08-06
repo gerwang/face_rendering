@@ -18,7 +18,7 @@ std::string  kAssetDir;
 std::string  kShaderDir;
 std::string kObjPath;
 std::string kNrmPath;
-char* kShaderDir_;
+const char* kShaderDir_;
 
 int main(int argc, char** argv){
 
@@ -38,7 +38,6 @@ int main(int argc, char** argv){
 
 
 void parseArgs(int argc, char** argv) {
-
 	kShaderDir_ = "../src/shaders";
 	kObjPath = std::string(argv[1]);
 	kNrmPath = std::string(argv[2]);
@@ -61,8 +60,8 @@ void Rotate(std::vector<T> *ts) {
 		if (glm::abs(t.velo) > dV) {
 			t.velo += dV;
 			auto dA = t.velo * dT;
-			auto T = glm::translate(glm::mat4{ 1.f }, -t.box.Center());
-			auto Tinv = glm::translate(glm::mat4{ 1.f }, t.box.Center());
+			//auto T = glm::translate(glm::mat4{ 1.f }, -t.box.Center());
+			//auto Tinv = glm::translate(glm::mat4{ 1.f }, t.box.Center());
 			t.Model = glm::rotate(t.Model, dA, glm::vec3{ 0.f,1.f,0.f });
 		}
 		else { t.velo = 0.f; }

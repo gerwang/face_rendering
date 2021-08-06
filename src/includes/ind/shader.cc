@@ -21,7 +21,9 @@ void ReadFile(std::string path, std::string *content) {
 	fin.seekg(0, std::ios_base::beg);
 	auto source = std::unique_ptr<char>(new char[size]);
 	fin.read(source.get(), size);
-	content->swap(std::string(source.get(), size));
+    std::string tmp_content;
+    tmp_content.assign(source.get(), size);
+	content->swap(tmp_content);
 }
 
 GLuint CreateShader(GLenum type, std::string code) {

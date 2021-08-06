@@ -4,7 +4,7 @@
 
 # define M_PI   3.14159265358979323846 
 
-extern char* kShaderDir_;
+extern const char* kShaderDir_;
 //char kShaderDir_[] = "F:/2019_08_13_anpei_face_render/src/shaders";
 
 const float sh_cof[27] = { 

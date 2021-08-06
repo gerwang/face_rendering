@@ -237,7 +237,8 @@ void ReadIndHairFile(
 	}
 
 	// Calculate dpdus.
-	desc->dpdus.swap(std::vector<glm::vec3>{desc->ps.size()});
+    decltype(desc->dpdus) temp_desc_dpdus = std::vector<glm::vec3>{desc->ps.size()};
+	desc->dpdus.swap(temp_desc_dpdus);
 	for (std::size_t kthvert = 0,
 		kthfib = 0; kthfib < desc->pcnts.size(); ++kthfib) {
 		for (std::size_t i = 0; i < desc->pcnts[kthfib] - 1; ++i) {
